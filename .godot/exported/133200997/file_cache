@@ -1,17 +1,17 @@
-res://Bullet/Bullet.tscn::3175352fe61659b867fe30526ce1ad2e::1699265399::res://.godot/exported/133200997/export-192ea693140d1975fec26590a74cf917-Bullet.scn
-res://Bullet/EnemyBullet.tscn::fb7d965a65cffe416ac8d9a5c640c9df::1694511695::res://.godot/exported/133200997/export-372a46c33a9f5e844763803bf9233385-EnemyBullet.scn
+res://Bullet/Bullet.tscn::3175352fe61659b867fe30526ce1ad2e::1717293436::res://.godot/exported/133200997/export-192ea693140d1975fec26590a74cf917-Bullet.scn
+res://Bullet/EnemyBullet.tscn::fb7d965a65cffe416ac8d9a5c640c9df::1717293436::res://.godot/exported/133200997/export-372a46c33a9f5e844763803bf9233385-EnemyBullet.scn
 res://Enemies/Flying/Jelly/Jelly.tres::a1eafa7a6981f34a56f9934fa5354b7d::1695450687::res://.godot/exported/133200997/export-f450cf3cb4a957263f25ae5fc228869f-Jelly.res
 res://Enemies/Flying/Jelly/Jelly.tscn::74ab833bdc3dba49f10917de4195f4f2::1699265398::res://.godot/exported/133200997/export-4a029d30dd11838b18546b65d13b8641-Jelly.scn
 res://Enemies/Flying/Squid/Squid.tres::adfab03c06aa0d4154c29dd1c268f7d6::1695450687::res://.godot/exported/133200997/export-95961956361dafe2e2b81dbf6a572e42-Squid.res
 res://Enemies/Flying/Squid/Squid.tscn::03f09ef444fc02289efd28fb4075ae99::1699265398::res://.godot/exported/133200997/export-73dfc69f7769f47f0775c2a05590442b-Squid.scn
-res://Enemies/Flying/FlyingEnemy.tscn::c2b9c10212bb6414487bff463c07ca8d::1695618649::res://.godot/exported/133200997/export-cc3c125a2892e233d23a792fa42e4e8b-FlyingEnemy.scn
+res://Enemies/Flying/FlyingEnemy.tscn::208c8aa8bd8f7f080b5ab839284b679b::1717293277::res://.godot/exported/133200997/export-cc3c125a2892e233d23a792fa42e4e8b-FlyingEnemy.scn
 res://Enemies/Land/Turtle/Turtle.tres::1fa902676f4b0056fd690dd88110eac7::1695450700::res://.godot/exported/133200997/export-6bcba8d444d6b51379e901bfe8fbd6d5-Turtle.res
 res://Enemies/Land/Turtle/Turtle.tscn::7716586d92039dc8e34e510e860bb96e::1699265398::res://.godot/exported/133200997/export-c8bfb84dfbde51fec1f22610183d8f5a-Turtle.scn
-res://Enemies/Land/LandedEnemy.tscn::ee2e85edf2ac7d90137ccfd503011ce2::1695436740::res://.godot/exported/133200997/export-741a9deb05384c7d3f582be665c36044-LandedEnemy.scn
+res://Enemies/Land/LandedEnemy.tscn::622b88a29d7206b4bd946cbadb46a246::1717293277::res://.godot/exported/133200997/export-741a9deb05384c7d3f582be665c36044-LandedEnemy.scn
 res://Enemies/Turret/StandardTurret/StandardTurret.tscn::86fe0ea2d4c155f496e9d9ffe8dbc958::1699265398::res://.godot/exported/133200997/export-400d605bcd0921b17a451f3bded84b5a-StandardTurret.scn
 res://Enemies/Turret/StandardTurret/Turrets.tres::01404613e66788d25f7a79ad8075f957::1695450724::res://.godot/exported/133200997/export-700dd09bd92c642e87c0e3685df1bbb1-Turrets.res
-res://Enemies/Turret/Turrets.tscn::1144e5b23315d0864ae4afe10eebfc2b::1695450711::res://.godot/exported/133200997/export-27b07fa774fb212d934a086830bf3c5d-Turrets.scn
-res://Enemies/HitFlash.tres::2db6fcfa7c243c5fb5d83e0bef16a14d::1699369629::res://.godot/exported/133200997/export-8801c179f6686568a5f1a90103887494-HitFlash.res
+res://Enemies/Turret/Turrets.tscn::40c92ee42395c74778b3e2e500d6f99d::1717293277::res://.godot/exported/133200997/export-27b07fa774fb212d934a086830bf3c5d-Turrets.scn
+res://Enemies/HitFlash.tres::2db6fcfa7c243c5fb5d83e0bef16a14d::1717293345::res://.godot/exported/133200997/export-8801c179f6686568a5f1a90103887494-HitFlash.res
 res://Hazards/MovingPlatform.tscn::91d3eddd9cceaba3f6b30cfcd7d4e462::1699265399::res://.godot/exported/133200997/export-1afe34af449a2265b9b9637179dc85e0-MovingPlatform.scn
 res://Hazards/Spikes.tscn::79fbe623a10de0b031608feabc826e2c::1695549691::res://.godot/exported/133200997/export-1c3034593febadd3cb94e384aef904ed-Spikes.scn
 res://Hitbox & Hurtbox/Hitbox.tscn::74ca138c8bcbbdf195ac948f3e57f6ed::1693130813::res://.godot/exported/133200997/export-017d526ec788805268d2451db2ee4f2a-Hitbox.scn
@@ -31,8 +31,8 @@ res://Particles/DeathAnimation.tscn::2554a0e7bbd59c85b1f0b30d323a8702::169487263
 res://Particles/HurtAnimation.tscn::826e52aeae3f8cdc1f9955c8a0a6035d::1694872638::res://.godot/exported/133200997/export-19e38eedd82ef338c183e0b3ae3354b5-HurtAnimation.scn
 res://Particles/JPThruster.tscn::b3b22e350abc11183d297c9d51ead5cb::1694511695::res://.godot/exported/133200997/export-d683fd2ca5b456fdb306a248092c4f8b-JPThruster.scn
 res://Particles/MuzzleFlash.tscn::e08f1bb10c51a32bcb4539e11a9468f2::1693743946::res://.godot/exported/133200997/export-47eaf8c15b08e7468d3d3088200cb667-MuzzleFlash.scn
-res://Player/Player.tres::f6853920a42727b7352614b28348e13f::1695308404::res://.godot/exported/133200997/export-21b2eecbbabfb221e9487ce12c8e6941-Player.res
-res://Player/Player.tscn::8eb1041dcd4a1b6d4cffecaacb04cc9b::1699369787::res://.godot/exported/133200997/export-48b487cb3fbab0e0d627d8f8de2ba1d9-Player.scn
+res://Player/Player.tres::92121368f53896976bafc82ab2a5e09f::1717227438::res://.godot/exported/133200997/export-21b2eecbbabfb221e9487ce12c8e6941-Player.res
+res://Player/Player.tscn::8eb1041dcd4a1b6d4cffecaacb04cc9b::1717293436::res://.godot/exported/133200997/export-48b487cb3fbab0e0d627d8f8de2ba1d9-Player.scn
 res://Rooms/D/D-0.tscn::ade0e403ee5fb96bfdb2094d5d81cf9c::1693716211::res://.godot/exported/133200997/export-7784d438bb47d87525d80bbe68c15e83-D-0.scn
 res://Rooms/D/D-1.tscn::f21180704bb631858c5389c91670705a::1695544981::res://.godot/exported/133200997/export-211f536a2ce4f9bf0ccbca30851ce342-D-1.scn
 res://Rooms/DL/DL-0.tscn::b2d7d5709635dbed3f20def80b3ced32::1695544981::res://.godot/exported/133200997/export-e5831da872ee7eae54e4171912b2c0c1-DL-0.scn
@@ -67,27 +67,27 @@ res://Rooms/U/U-0.tscn::4700e192412970a45cbd7db9037bb7fd::1694273726::res://.god
 res://Rooms/U/U-1.tscn::3fba85e11f3d0becfbfebb13337acf91::1694737783::res://.godot/exported/133200997/export-c45c4b6f9d878052a9becd72f94c8dac-U-1.scn
 res://Rooms/Gate.tscn::e89a844fb31c9e604877cd2b59d196c2::1694942384::res://.godot/exported/133200997/export-62d9848c2d434763784783673c5df1dd-Gate.scn
 res://Rooms/Room_base.tscn::30543e5d6dab7da4f910e37e553f5472::1695455240::res://.godot/exported/133200997/export-d187b7c615ee60f564364fa737ee9ca6-Room_base.scn
-res://Rooms/StartingRoom.tscn::ff30398a482e79fc4704929801908919::1699265399::res://.godot/exported/133200997/export-947916e4cd42dcde3b6472fa3696ed96-StartingRoom.scn
+res://Rooms/StartingRoom.tscn::ff30398a482e79fc4704929801908919::1717293436::res://.godot/exported/133200997/export-947916e4cd42dcde3b6472fa3696ed96-StartingRoom.scn
 res://TileMaps/Room_TileMap_Green.tscn::8aa3038aa966960863e0630c716f6663::1695549691::res://.godot/exported/133200997/export-62b18863293a7ef5dc1ac7070516be35-Room_TileMap_Green.scn
 res://UI/Map/Map.tscn::ae4cd0198d1528cb02e730597f803b24::1695133308::res://.godot/exported/133200997/export-bbacb5434cda6a72f7727bfb7be98372-Map.scn
 res://UI/Map/MapUnit.tscn::d8a39cca6abf35d8908a7c2e68877c0c::1695102245::res://.godot/exported/133200997/export-75341e81d77aa3ac4d0c178e7cfb3306-MapUnit.scn
 res://UI/Stats Display/Stats/StatDisplay.tscn::687f5191c6af699e26c6b7dd5033e71c::1695133521::res://.godot/exported/133200997/export-65bfff53c36669e4cad2d763afb63a69-StatDisplay.scn
 res://UI/Stats Display/Coin.tscn::31555fa61ad0787248125f227f397948::1695101550::res://.godot/exported/133200997/export-19eff98c1064502ffef336b390d94e0e-Coin.scn
-res://UI/Stats Display/IconDisplay.tscn::4ac9e90b43570c4fbef659c7514017dd::1695101550::res://.godot/exported/133200997/export-47de1a005ef3a43e0801fd9e9929d948-IconDisplay.scn
-res://UI/World/damage_numbers.tscn::aa415eb8485ec2a1829cda381079f0bb::1695307540::res://.godot/exported/133200997/export-8eddd0099ff2a7b94b86d50cfde42917-damage_numbers.scn
+res://UI/Stats Display/IconDisplay.tscn::60c1043de85153272d6a820402486426::1717293345::res://.godot/exported/133200997/export-47de1a005ef3a43e0801fd9e9929d948-IconDisplay.scn
+res://UI/World/damage_numbers.tscn::5844e0c2a1d75c2597478ff898e658b1::1717293345::res://.godot/exported/133200997/export-8eddd0099ff2a7b94b86d50cfde42917-damage_numbers.scn
 res://UI/EmptyHearts.tscn::fd97952746117ba1530eee877f9693af::1693578715::res://.godot/exported/133200997/export-d9eebdf88eddcd4c9030b634fe4694a8-EmptyHearts.scn
 res://UI/Hearts.tscn::7a3be4a37d516e86c2a952a5309abf87::1694612893::res://.godot/exported/133200997/export-57e84932f6da82aca06905025ac2e37d-Hearts.scn
 res://UI/ItemButton.tres::84c8ae27395f16b0c535268d450b610b::1694918567::res://.godot/exported/133200997/export-852bd2fb0b8f71dceb1ee63d8729b72d-ItemButton.res
-res://UI/ItemButton.tscn::ecdc87ea25e88675938db45b4904d2ff::1695549691::res://.godot/exported/133200997/export-ff407d0d873066db5f77d49db92b7ca3-ItemButton.scn
-res://UI/UI.tscn::aea112c41dea65c5465d264c44f09a3f::1699369786::res://.godot/exported/133200997/export-99e0db414fd163b9d4cd175ed199445e-UI.scn
-res://BGM.tscn::0bd5dd4e06b474ac96bfeb3336314f6f::1697816178::res://.godot/exported/133200997/export-46db0ea6874b59f73f1c0aa1ab2c81a1-BGM.scn
-res://Default.tres::b2dea0a09f82761ed771df312874a879::1699369629::res://.godot/exported/133200997/export-618a64fbd48de1044da3022e0811c914-Default.res
+res://UI/ItemButton.tscn::bb4d632dd1b85ad80acf969c89800d0f::1717293277::res://.godot/exported/133200997/export-ff407d0d873066db5f77d49db92b7ca3-ItemButton.scn
+res://UI/UI.tscn::4b1d2e7f2d48211d5d07a575bb05dfde::1717293436::res://.godot/exported/133200997/export-99e0db414fd163b9d4cd175ed199445e-UI.scn
+res://Default.tres::5a2dfcf5d76fe9fe03ec4c9c607e0a1b::1717293345::res://.godot/exported/133200997/export-618a64fbd48de1044da3022e0811c914-Default.res
 res://default_bus_layout.tres::0185a32eef0fe6b8345d37dc32c5fae7::1695113141::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res
-res://Dialog.tscn::802f25632dbd7220b6d68a5669d8729e::1694577697::res://.godot/exported/133200997/export-653f2b2abe27d224fc26220893f4ba3e-Dialog.scn
-res://MainMenu.tscn::c360f5f2ce54f854831e6e6e0db28fee::1699265399::res://.godot/exported/133200997/export-e20540a8a37e906f11cb1dae59cc6ed4-MainMenu.scn
-res://Shop.tscn::00b414520662e0b5d3ad099c78d0d4a3::1697816178::res://.godot/exported/133200997/export-a69ddb02320b040897fb4092d45ac62b-Shop.scn
-res://SoundPlayer.tscn::91b8734f1b2bb2fd62ba444944442360::1695544981::res://.godot/exported/133200997/export-4e4415449c83e3d66cbd33fc2729d5bd-SoundPlayer.scn
-res://World.tscn::23feeaf9ea43f49bb27d7bd5a11c9440::1699265399::res://.godot/exported/133200997/export-73d50b7f59085c9a9ce28353ee849bb1-World.scn
+res://Dialog.tscn::802f25632dbd7220b6d68a5669d8729e::1717293436::res://.godot/exported/133200997/export-653f2b2abe27d224fc26220893f4ba3e-Dialog.scn
+res://World.tscn::23feeaf9ea43f49bb27d7bd5a11c9440::1717293436::res://.godot/exported/133200997/export-73d50b7f59085c9a9ce28353ee849bb1-World.scn
 res://Enemies/Turret/MissileTurret/MissileTurret.tscn::9e5363b01e73c5346032f48c5968f82d::1699096084::res://.godot/exported/133200997/export-c41a5b109b5232e26baa39cb57137cbd-MissileTurret.scn
 res://Rooms/DLR/DLR-2.tscn::c7a7aa38af07c88e7b7690a65331ebc6::1699168383::res://.godot/exported/133200997/export-991b770e4c36fea456761fb415db73e3-DLR-2.scn
 res://Rooms/DLRU/DLRU-2.tscn::bdc9fccc9b493c4de1922ac1c0b18725::1699265399::res://.godot/exported/133200997/export-ffffa28f8322fc756fb395f763de6056-DLRU-2.scn
+res://Music/BGM.tscn::0bd5dd4e06b474ac96bfeb3336314f6f::1697816178::res://.godot/exported/133200997/export-617b6591e04a8034285921eecd50bc9d-BGM.scn
+res://Music/SoundPlayer.tscn::3b36e28fc52c2ff77be88513fdba920b::1717293277::res://.godot/exported/133200997/export-1218180556058f884a7ecfcf9bc8f914-SoundPlayer.scn
+res://UI/Main Menu/MainMenu.tscn::1b1cbbdc29181bffbdcd24788b9d3a39::1717293345::res://.godot/exported/133200997/export-35f4ebc6c19b3df4bbbfac4e70db0cf0-MainMenu.scn
+res://UI/Shop/Shop.tscn::bf8b7d65bfa38c76c91b09b1705bb048::1717293426::res://.godot/exported/133200997/export-4811eb7c1d1162979574819d9c759f2b-Shop.scn
