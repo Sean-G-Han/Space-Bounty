@@ -1,6 +1,9 @@
 Overview
 Welcome to 20XX Space Bounty, a 2D platformer shooter developed with Godot 4.0. Step into the shoes of a space bounty hunter navigating through treacherous terrains, fighting enemies, and completing missions in a futuristic universe. Get ready for an action-packed adventure!
 
+Gameplay
+https://www.youtube.com/watch?v=LZtTkq8gM4U
+
 Game Features
 Platformer Mechanics: Navigate through various levels filled with platforms, obstacles, and enemies.
 Shooter Gameplay: Engage in intense shootouts using a variety of weapons.
@@ -18,8 +21,9 @@ Press Escape and click accordingly
 
 Installation
 Download the Game:
-- Extract the downloaded zip file to your desired location.
-- Run the Game
+- Download "20XX Space Bounty.zip"
+- Extract the zip file to your desired location.
+- Run the .exe (Should be 60+MB)
 
 Open the extracted folder and run 20XX_Space_Bounty.exe (or the equivalent executable for your OS).
 System Requirements
