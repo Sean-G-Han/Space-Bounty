@@ -1,0 +1,9 @@
+res://UI/UI.tscn
+res://Default.tres
+res://Enemies/HitFlash.tres
+res://Player/Player.tscn
+res://Rooms/StartingRoom.tscn
+res://World.tscn
+res://Bullet/Bullet.tscn
+res://Bullet/EnemyBullet.tscn
+res://Dialog.tscn

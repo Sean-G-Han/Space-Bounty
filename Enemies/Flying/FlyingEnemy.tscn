@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://rjfbatytji3c"]
+
+[ext_resource type="Script" path="res://Enemies/Flying/FlyingEnemy.gd" id="1_cm7ld"]
+[ext_resource type="Resource" uid="uid://ct48n8oi6nef7" path="res://Enemies/Flying/Jelly/Jelly.tres" id="2_p825i"]
+[ext_resource type="PackedScene" uid="uid://c3lkappyeeje1" path="res://Hitbox & Hurtbox/Hitbox.tscn" id="3_d7r5v"]
+[ext_resource type="PackedScene" uid="uid://c47sr7qr7j7hk" path="res://Music/SoundPlayer.tscn" id="3_jqabh"]
+[ext_resource type="Script" path="res://Hitbox & Hurtbox/Hurtbox.gd" id="5_w0601"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2yyhh"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7fwr8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y3bbh"]
+
+[node name="FlyingEnemy" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 9
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_cm7ld")
+stats = ExtResource("2_p825i")
+
+[node name="SoundPlayer" parent="." instance=ExtResource("3_jqabh")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2yyhh")
+
+[node name="Hitbox" parent="." instance=ExtResource("3_d7r5v")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox"]
+rotation = 1.5708
+shape = SubResource("CircleShape2D_7fwr8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+hframes = 3
+
+[node name="Background" type="Sprite2D" parent="."]
+
+[node name="Hurtbox" type="Area2D" parent="."]
+script = ExtResource("5_w0601")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_y3bbh")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="NavTimer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="_on_area_entered"]
+[connection signal="timeout" from="NavTimer" to="." method="_on_nav_timer_timeout"]

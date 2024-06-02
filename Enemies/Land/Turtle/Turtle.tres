@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://gr0poh58lolv"]
+
+[ext_resource type="Script" path="res://Stats.gd" id="1_pi3ux"]
+
+[resource]
+script = ExtResource("1_pi3ux")
+Health = 7.5
+Speed = 30
+Attack = 1.0
+FireRate = 1.5
+FallSpeed = 300.0
+Acceleration = 30.0
+JumpVelocity = -200.0
+ProjectileSpeed = 100

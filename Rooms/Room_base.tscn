@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://c01auvq08x07g"]
+
+[ext_resource type="Script" path="res://Rooms/Room.gd" id="1_1x712"]
+[ext_resource type="PackedScene" uid="uid://0wr7l44ahwgj" path="res://TileMaps/Room_TileMap_Green.tscn" id="1_3wt1r"]
+[ext_resource type="PackedScene" uid="uid://in56rfifqymg" path="res://Rooms/Gate.tscn" id="3_8cxqd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65rnq"]
+size = Vector2(608, 384)
+
+[node name="Room_Base" type="Node2D"]
+script = ExtResource("1_1x712")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(304, 176)
+enabled = false
+zoom = Vector2(1.5, 1.5)
+
+[node name="TileMap" parent="." instance=ExtResource("1_3wt1r")]
+z_index = -101
+layer_0/tile_data = PackedInt32Array(851967, 327680, 3, 786431, 131072, 1, 720895, 131072, 1, 655359, 131072, 1, 589823, 131072, 1, 524287, 131072, 1, 458751, 131072, 1, 393215, 131072, 1, 327679, 131072, 1, 196607, 131072, 1, 131071, 131072, 1, 65535, 131072, 1, -1, 327680, 1, 786451, 393216, 3, 786450, 65536, 3, 786449, 65536, 3, 786448, 65536, 3, 786447, 65536, 3, 786446, 65536, 3, 786445, 65536, 3, 786444, 65536, 3, 786443, 65536, 3, 786442, 65536, 3, 786441, 65536, 3, 786440, 65536, 3, 786439, 65536, 3, 786438, 65536, 3, 786437, 65536, 3, 786436, 65536, 3, 786435, 65536, 3, 786434, 65536, 3, 786433, 65536, 3, 786432, 65536, 3, -65516, 65536, 1, 20, 65536, 1, -65536, 65536, 2, -65535, 65536, 2, -65534, 65536, 2, -65533, 65536, 2, -65532, 65536, 2, -65531, 65536, 2, -65530, 65536, 2, -65529, 65536, 2, -65528, 65536, 2, -65527, 65536, 2, -65526, 65536, 2, -65525, 65536, 2, -65524, 65536, 2, -65523, 65536, 2, -65522, 65536, 2, -65521, 65536, 2, -65520, 65536, 2, -65519, 65536, 2, -65518, 65536, 2, -65517, 393216, 1, 458771, 0, 1, 393235, 0, 1, 327699, 0, 1, 262163, 0, 1, 196627, 0, 1, 131091, 0, 1, 65555, 0, 1, 19, 0, 1, 589843, 0, 1, 655379, 0, 1, 720915, 0, 1, 524307, 0, 1, -65515, 131072, 1, 21, 131072, 1, 65557, 131072, 1, 131093, 131072, 1, 196629, 131072, 1, 262165, 131072, 1, 327701, 131072, 1, 393237, 131072, 1, 458773, 131072, 1, 524309, 131072, 1, 589845, 131072, 1, 655381, 131072, 1, 720917, 131072, 1, 786453, 131072, 2, 786452, 65536, 2, 720916, 65536, 1, 655380, 65536, 1, 589844, 65536, 1, 524308, 65536, 1, 458772, 65536, 1, 393236, 65536, 1, 327700, 65536, 1, 262164, 65536, 1, 196628, 65536, 1, 131092, 65536, 1, 65556, 65536, 1, -65539, 0, 0, -65538, 65536, 0, -65537, 65536, 0, -131072, 65536, 0, -131071, 65536, 0, -131070, 65536, 0, -131069, 65536, 0, -131068, 65536, 0, -131067, 65536, 0, -131066, 65536, 0, -131065, 65536, 0, -131064, 65536, 0, -131063, 65536, 0, -131062, 65536, 0, -131061, 65536, 0, -131060, 65536, 0, -131059, 65536, 0, -131058, 65536, 0, -131057, 65536, 0, -131056, 65536, 0, -131055, 65536, 0, -131054, 65536, 0, -131053, 65536, 0, -131052, 65536, 0, -131051, 131072, 0, 851965, 0, 2, 786429, 0, 1, 720893, 0, 1, 655357, 0, 1, 589821, 0, 1, 524285, 0, 1, 458749, 0, 1, 393213, 0, 1, 327677, 0, 1, 262141, 0, 1, 196605, 0, 1, 131069, 0, 1, 65533, 0, 1, -3, 0, 1, 851966, 65536, 2, -2, 65536, 1, 65534, 65536, 1, 131070, 65536, 1, 196606, 65536, 1, 262142, 65536, 1, 327678, 65536, 1, 393214, 65536, 1, 458750, 65536, 1, 524286, 65536, 1, 589822, 65536, 1, 655358, 65536, 1, 720894, 65536, 1, 786430, 65536, 1, 262143, 131072, 1)
+
+[node name="Gates" type="Node2D" parent="."]
+
+[node name="Down" parent="Gates" instance=ExtResource("3_8cxqd")]
+position = Vector2(304, 368)
+teleportOffset = Vector2(0, 176)
+
+[node name="Up" parent="Gates" instance=ExtResource("3_8cxqd")]
+position = Vector2(304, 48)
+teleportOffset = Vector2(0, -176)
+
+[node name="Right" parent="Gates" instance=ExtResource("3_8cxqd")]
+position = Vector2(560, 208)
+teleportOffset = Vector2(240, 0)
+
+[node name="Left" parent="Gates" instance=ExtResource("3_8cxqd")]
+position = Vector2(48, 208)
+teleportOffset = Vector2(-240, 0)
+
+[node name="RoomCenter" type="Marker2D" parent="."]
+position = Vector2(304, 208)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="PlayerDetector" type="Area2D" parent="."]
+visible = false
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+position = Vector2(304, 192)
+shape = SubResource("RectangleShape2D_65rnq")
+
+[node name="Hazard" type="Node2D" parent="."]
+
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
+[connection signal="body_exited" from="PlayerDetector" to="." method="_on_player_detector_body_exited"]

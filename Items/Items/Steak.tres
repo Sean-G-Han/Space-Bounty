@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Items" load_steps=3 format=3 uid="uid://wdwo173fx1xu"]
+
+[ext_resource type="Script" path="res://Items/Items.gd" id="1_6f5su"]
+[ext_resource type="Texture2D" uid="uid://cr6ldiea07jjs" path="res://Assets/Assets/Items/Steak.png" id="1_12i4g"]
+
+[resource]
+script = ExtResource("1_6f5su")
+Name = "Steak"
+Description = "Meaty goodness, filled with protein. Consuming this would increase health and attack."
+Cost = 50
+Sprite = ExtResource("1_12i4g")
+Health = 1
+DamageHealed = 0
+Speed = 0.0
+Attack = 1.0
+FireRate = 0.0
+FallSpeed = 0.0
+Acceleration = 0.0
+JumpVelocity = 0.0
+ProjectileSpeed = 0.0

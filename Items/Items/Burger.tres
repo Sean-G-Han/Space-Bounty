@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Items" load_steps=3 format=3 uid="uid://br01hl0bisuw2"]
+
+[ext_resource type="Texture2D" uid="uid://djp3od5e85j7b" path="res://Assets/Assets/Items/Burger.png" id="1_3ynt3"]
+[ext_resource type="Script" path="res://Items/Items.gd" id="1_eph3n"]
+
+[resource]
+script = ExtResource("1_eph3n")
+Name = "Burger"
+Description = "Mass-produced goodness, filled with protein. Consuming this would increase health."
+Cost = 50
+Sprite = ExtResource("1_3ynt3")
+Health = 1
+DamageHealed = 0
+Speed = 0.0
+Attack = 0.0
+FireRate = 0.0
+FallSpeed = 0.0
+Acceleration = 0.0
+JumpVelocity = 0.0
+ProjectileSpeed = 0.0

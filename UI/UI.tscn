@@ -1,0 +1,253 @@
+[gd_scene load_steps=23 format=3 uid="uid://b6gif3mgd8us0"]
+
+[ext_resource type="Script" path="res://UI/UI.gd" id="1_gwyga"]
+[ext_resource type="FontFile" uid="uid://c58k3bttakj0o" path="res://UI/Fonts/Pixellari.ttf" id="2_d0exk"]
+[ext_resource type="PackedScene" uid="uid://bkjofhj271j8d" path="res://UI/Map/Map.tscn" id="2_lk1p6"]
+[ext_resource type="PackedScene" uid="uid://dueoq2b4s1r7d" path="res://UI/Stats Display/Coin.tscn" id="2_ltv1g"]
+[ext_resource type="PackedScene" uid="uid://clqeo4arodt0l" path="res://UI/Stats Display/Stats/StatDisplay.tscn" id="3_vld4m"]
+[ext_resource type="Theme" uid="uid://cjkxmykcwsi3e" path="res://Default.tres" id="3_yxvln"]
+[ext_resource type="Texture2D" uid="uid://dykn4wr8il243" path="res://Assets/Assets/UI/Damage.png" id="4_5ppyh"]
+[ext_resource type="Texture2D" uid="uid://vv1ud2cnwhtk" path="res://Assets/Assets/UI/ProjectileSpeed.png" id="5_5psb1"]
+[ext_resource type="PackedScene" uid="uid://c02lwf4r157t" path="res://UI/Shop/Shop.tscn" id="5_w05bp"]
+[ext_resource type="Texture2D" uid="uid://cjyhqa4r834pt" path="res://Assets/Assets/UI/ProjectileRate.png" id="6_4hmo2"]
+[ext_resource type="Texture2D" uid="uid://bgvlbe0uvahqy" path="res://Assets/Assets/NPC/Billy.png" id="6_61yyc"]
+[ext_resource type="Texture2D" uid="uid://bv1o17nvrpv35" path="res://Assets/Assets/UI/Speed.png" id="7_wsgid"]
+
+[sub_resource type="Theme" id="Theme_1aw43"]
+TooltipLabel/colors/font_color = Color(0, 1, 0, 1)
+TooltipLabel/fonts/font = ExtResource("2_d0exk")
+
+[sub_resource type="Animation" id="Animation_qsw8p"]
+resource_name = "Fade In"
+length = 0.30001
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"curtainsUp"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ticd6"]
+resource_name = "Fade Out"
+length = 0.30001
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5osfn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g8s7x"]
+_data = {
+"Fade In": SubResource("Animation_qsw8p"),
+"Fade Out": SubResource("Animation_ticd6"),
+"RESET": SubResource("Animation_5osfn")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wydn"]
+atlas = ExtResource("6_61yyc")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slug3"]
+atlas = ExtResource("6_61yyc")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1b3hf"]
+atlas = ExtResource("6_61yyc")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4b2w"]
+atlas = ExtResource("6_61yyc")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_40dxm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wydn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slug3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1b3hf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4b2w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="UI" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_gwyga")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="HealthBar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Stats" type="VBoxContainer" parent="HealthBar"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 112.0
+offset_right = 96.0
+offset_bottom = 288.0
+theme = SubResource("Theme_1aw43")
+
+[node name="Coin" parent="HealthBar/Stats" instance=ExtResource("2_ltv1g")]
+layout_mode = 2
+
+[node name="Attack" parent="HealthBar/Stats" instance=ExtResource("3_vld4m")]
+layout_mode = 2
+tooltip_text = "Attack"
+icon = ExtResource("4_5ppyh")
+
+[node name="ProjectileSpeed" parent="HealthBar/Stats" instance=ExtResource("3_vld4m")]
+layout_mode = 2
+tooltip_text = "Projectile Speed"
+icon = ExtResource("5_5psb1")
+
+[node name="ProjectileRate" parent="HealthBar/Stats" instance=ExtResource("3_vld4m")]
+layout_mode = 2
+tooltip_text = "Projectile Rate"
+icon = ExtResource("6_4hmo2")
+
+[node name="Speed" parent="HealthBar/Stats" instance=ExtResource("3_vld4m")]
+layout_mode = 2
+tooltip_text = "Movement Speed"
+icon = ExtResource("7_wsgid")
+
+[node name="EmptyHearts" type="HBoxContainer" parent="HealthBar"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 80.0
+offset_bottom = 80.0
+
+[node name="FullHearts" type="HBoxContainer" parent="HealthBar"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 80.0
+offset_bottom = 80.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_g8s7x")
+}
+
+[node name="TabContainer" type="TabContainer" parent="."]
+offset_left = -1120.0
+offset_top = 32.0
+offset_right = -32.0
+offset_bottom = 624.0
+theme = ExtResource("3_yxvln")
+
+[node name="Map" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+
+[node name="Map" parent="TabContainer/Map" instance=ExtResource("2_lk1p6")]
+position = Vector2(540, 280)
+
+[node name="Shop" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Node2D" type="Node2D" parent="TabContainer/Shop"]
+position = Vector2(316, 40)
+
+[node name="GridContainer" parent="TabContainer/Shop/Node2D" instance=ExtResource("5_w05bp")]
+offset_right = 724.0
+offset_bottom = 464.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Coin" parent="TabContainer/Shop" instance=ExtResource("2_ltv1g")]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 0
+offset_left = 28.0
+offset_top = 44.0
+offset_right = 124.0
+offset_bottom = 140.0
+
+[node name="Sprite2D" parent="TabContainer/Shop/Coin" index="0"]
+position = Vector2(48, 48)
+scale = Vector2(6, 6)
+
+[node name="Label" parent="TabContainer/Shop/Coin" index="1"]
+offset_left = 96.0
+offset_top = 16.0
+offset_right = 216.0
+offset_bottom = 83.0
+theme_override_font_sizes/font_size = 64
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TabContainer/Shop"]
+position = Vector2(172, 376)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_40dxm")
+autoplay = "default"
+frame_progress = 0.715523
+
+[editable path="TabContainer/Shop/Coin"]

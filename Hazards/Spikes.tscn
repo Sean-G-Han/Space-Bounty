@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cn0dq8kxmuur3"]
+
+[ext_resource type="Texture2D" uid="uid://c32e5upxv3i6l" path="res://Assets/Assets/Spikes.png" id="1_b2x2g"]
+[ext_resource type="Script" path="res://Hitbox & Hurtbox/Hitbox.gd" id="2_3gkg2"]
+[ext_resource type="Script" path="res://Hazards/Spikes.gd" id="2_c0dna"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u72hc"]
+size = Vector2(32, 4)
+
+[node name="Spikes" type="Sprite2D"]
+texture = ExtResource("1_b2x2g")
+script = ExtResource("2_c0dna")
+
+[node name="Hitbox" type="Area2D" parent="."]
+script = ExtResource("2_3gkg2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_u72hc")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

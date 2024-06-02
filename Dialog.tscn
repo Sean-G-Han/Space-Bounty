@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://w3o45q28h5dj"]
+
+[ext_resource type="Theme" uid="uid://cjkxmykcwsi3e" path="res://Default.tres" id="1_kw4bs"]
+[ext_resource type="Texture2D" uid="uid://cbmwh856xgmhq" path="res://Assets/Assets/Dialog.png" id="2_lrqrb"]
+[ext_resource type="Script" path="res://Dialog.gd" id="2_xxikh"]
+
+[sub_resource type="Theme" id="Theme_wp12q"]
+
+[node name="Control" type="MarginContainer"]
+offset_right = 32.0
+offset_bottom = 35.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_kw4bs")
+script = ExtResource("2_xxikh")
+Text = Array[String]([""])
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_lrqrb")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="MarginContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_wp12q")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

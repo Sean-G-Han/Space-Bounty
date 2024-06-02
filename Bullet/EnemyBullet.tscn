@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://5rsb05ysrq3g"]
+
+[ext_resource type="PackedScene" uid="uid://7yqt47y7fp8v" path="res://Bullet/Bullet.tscn" id="1_je1p1"]
+
+[node name="RigidBody2D" instance=ExtResource("1_je1p1")]
+modulate = Color(1, 0.392157, 0, 1)
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(1.78814e-07, -1.19209e-07)
+scale = Vector2(1, 1)
+
+[node name="Hitbox" parent="." index="2"]
+target_player = true

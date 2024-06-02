@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://ct48n8oi6nef7"]
+
+[ext_resource type="Script" path="res://Stats.gd" id="1_2inat"]
+
+[resource]
+script = ExtResource("1_2inat")
+Health = 2.4
+Speed = 60
+Attack = 1.0
+FireRate = 2.0
+FallSpeed = 300.0
+Acceleration = 30.0
+JumpVelocity = -200.0
+ProjectileSpeed = 100

@@ -1,0 +1,155 @@
+[gd_scene load_steps=16 format=3 uid="uid://c7psyncmgryur"]
+
+[ext_resource type="PackedScene" uid="uid://bbu4jk16uqc5k" path="res://Rooms/DLRU/DLRU-0.tscn" id="1_8bf4u"]
+[ext_resource type="PackedScene" uid="uid://b282chpomw352" path="res://Enemies/Turret/StandardTurret/StandardTurret.tscn" id="2_v2c40"]
+[ext_resource type="PackedScene" uid="uid://bl7s3bt4b32l3" path="res://Enemies/Flying/Jelly/Jelly.tscn" id="3_iq3en"]
+[ext_resource type="Shader" uid="uid://bdf6n1xdee0ab" path="res://Enemies/HitFlash.tres" id="4_twug5"]
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_wiyc6"]
+parameter_name = "ColorParameter"
+default_value_enabled = true
+
+[sub_resource type="VisualShaderNodeBooleanParameter" id="VisualShaderNodeBooleanParameter_22f0v"]
+parameter_name = "BooleanParameter"
+default_value_enabled = true
+
+[sub_resource type="VisualShaderNodeIf" id="VisualShaderNodeIf_380mh"]
+default_input_values = [0, 0.0, 1, 1.0, 2, 1e-05, 3, Vector3(0, 0, 0), 4, Vector3(0, 0, 0), 5, Vector3(0, 0, 0)]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_w6usp"]
+expanded_output_ports = [0]
+input_name = "color"
+
+[sub_resource type="VisualShader" id="VisualShader_ys5f3"]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+uniform bool BooleanParameter = false;
+uniform vec4 ColorParameter : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
+
+
+
+void fragment() {
+// BooleanParameter:3
+	bool n_out3p0 = BooleanParameter;
+
+
+// ColorParameter:2
+	vec4 n_out2p0 = ColorParameter;
+
+
+// Input:5
+	vec4 n_out5p0 = COLOR;
+
+
+	vec3 n_out4p0;
+// If:4
+	float n_in4p1 = 1.00000;
+	float n_in4p2 = 0.00001;
+	if(abs((n_out3p0 ? 1.0 : 0.0) - n_in4p1) < n_in4p2)
+	{
+		n_out4p0 = vec3(n_out2p0.xyz);
+	}
+	else if((n_out3p0 ? 1.0 : 0.0) < n_in4p1)
+	{
+		n_out4p0 = vec3(n_out5p0.xyz);
+	}
+	else
+	{
+		n_out4p0 = vec3(n_out5p0.xyz);
+	}
+
+
+// Output:0
+	COLOR.rgb = n_out4p0;
+
+
+}
+"
+graph_offset = Vector2(-67.4864, 166.762)
+mode = 1
+flags/light_only = false
+nodes/fragment/0/position = Vector2(600, 140)
+nodes/fragment/2/node = SubResource("VisualShaderNodeColorParameter_wiyc6")
+nodes/fragment/2/position = Vector2(100, 260)
+nodes/fragment/3/node = SubResource("VisualShaderNodeBooleanParameter_22f0v")
+nodes/fragment/3/position = Vector2(100, 80)
+nodes/fragment/4/node = SubResource("VisualShaderNodeIf_380mh")
+nodes/fragment/4/position = Vector2(420, 100)
+nodes/fragment/5/node = SubResource("VisualShaderNodeInput_w6usp")
+nodes/fragment/5/position = Vector2(20, 440)
+nodes/fragment/connections = PackedInt32Array(3, 0, 4, 0, 2, 0, 4, 3, 4, 0, 0, 0, 5, 0, 4, 4, 5, 0, 4, 5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mpav8"]
+resource_local_to_scene = true
+shader = SubResource("VisualShader_ys5f3")
+shader_parameter/BooleanParameter = false
+shader_parameter/ColorParameter = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8k5ar"]
+resource_local_to_scene = true
+shader = SubResource("VisualShader_ys5f3")
+shader_parameter/BooleanParameter = false
+shader_parameter/ColorParameter = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mevsb"]
+resource_local_to_scene = true
+shader = ExtResource("4_twug5")
+shader_parameter/BooleanParameter = false
+shader_parameter/ColorParameter = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3udwq"]
+resource_local_to_scene = true
+shader = ExtResource("4_twug5")
+shader_parameter/BooleanParameter = false
+shader_parameter/ColorParameter = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ig0u8"]
+resource_local_to_scene = true
+shader = ExtResource("4_twug5")
+shader_parameter/BooleanParameter = false
+shader_parameter/ColorParameter = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tn0y0"]
+resource_local_to_scene = true
+shader = ExtResource("4_twug5")
+shader_parameter/BooleanParameter = false
+shader_parameter/ColorParameter = Color(1, 1, 1, 1)
+
+[node name="Room_Base" instance=ExtResource("1_8bf4u")]
+
+[node name="TileMap" parent="." index="1"]
+layer_0/tile_data = PackedInt32Array(786441, 65536, 3, 786440, 65536, 3, 786439, 65536, 3, 786438, 65536, 3, 786437, 65536, 3, 786436, 65536, 3, 786435, 65536, 3, 786434, 327680, 3, 786433, 65536, 2, 786432, 65536, 2, 786442, 65536, 3, 786443, 65536, 3, 786444, 65536, 3, 786445, 65536, 3, 786446, 65536, 3, 786447, 65536, 3, 786448, 393216, 3, 786449, 65536, 2, 786450, 65536, 2, 786451, 65536, 2, 720915, 65536, 1, 655379, 65536, 1, 589843, 65536, 1, 524307, 65536, 1, 458771, 393216, 2, 393235, 0, 1, 327699, 0, 1, 262163, 0, 1, 196627, 0, 1, 131091, 0, 1, 65555, 0, 1, 19, 0, 1, 851967, 65536, 2, 786431, 65536, 1, 720895, 65536, 1, 655359, 65536, 1, 589823, 65536, 1, 524287, 327680, 2, 458751, 131072, 1, 393215, 131072, 1, 327679, 131072, 1, 262143, 131072, 1, 196607, 131072, 1, 131071, 131072, 1, 65535, 131072, 1, -1, 327680, 1, -65536, 65536, 2, -65535, 65536, 2, -65533, 65536, 2, -65534, 65536, 2, -65532, 65536, 2, -65531, 65536, 2, -65530, 65536, 2, -65529, 65536, 2, -65528, 65536, 2, -65527, 65536, 2, -65526, 65536, 2, -65525, 65536, 2, -65524, 65536, 2, -65523, 65536, 2, -65522, 65536, 2, -65521, 65536, 2, -65520, 65536, 2, -65519, 65536, 2, -65518, 65536, 2, -65517, 393216, 1, -131052, 65536, 0, -131053, 65536, 0, -131054, 65536, 0, -131055, 65536, 0, -131056, 65536, 0, -131057, 65536, 0, -131058, 65536, 0, -131059, 65536, 0, -131061, 65536, 0, -131060, 65536, 0, -131062, 65536, 0, -131063, 65536, 0, -131064, 65536, 0, -131065, 65536, 0, -131066, 65536, 0, -131067, 65536, 0, -131068, 65536, 0, -131069, 65536, 0, -131070, 65536, 0, -131071, 65536, 0, -131072, 65536, 0, -65537, 65536, 0, -65538, 65536, 0, -65539, 0, 0, 851966, 65536, 2, 786430, 65536, 1, 720894, 65536, 1, 655358, 65536, 1, 589822, 65536, 1, 524286, 65536, 1, 458750, 65536, 1, 393214, 65536, 1, 327678, 65536, 1, 262142, 65536, 1, 196606, 65536, 1, 131070, 65536, 1, 65534, 65536, 1, -2, 65536, 1, 851965, 0, 2, 786429, 0, 1, 720893, 0, 1, 655357, 0, 1, 589821, 0, 1, 524285, 0, 1, 458749, 0, 1, 393213, 0, 1, 327677, 0, 1, 262141, 0, 1, 196605, 0, 1, 131069, 0, 1, 65533, 0, 1, -3, 0, 1, 786453, 131072, 2, 720917, 131072, 1, 655381, 131072, 1, 589845, 131072, 1, 524309, 131072, 1, 458773, 131072, 1, 393237, 131072, 1, 327701, 131072, 1, 262165, 131072, 1, 196629, 131072, 1, 131093, 131072, 1, 65557, 131072, 1, 21, 131072, 1, -65515, 131072, 1, -131051, 131072, 0, 786452, 65536, 2, 720916, 65536, 1, 655380, 65536, 1, 589844, 65536, 1, 524308, 65536, 1, 458772, 65536, 1, 393236, 65536, 1, 327700, 65536, 1, 262164, 65536, 1, 196628, 65536, 1, 131092, 65536, 1, 65556, 65536, 1, 20, 65536, 1, -65516, 65536, 1, 458752, 65536, 0, 458753, 65536, 0, 458754, 327680, 0, 131082, 458752, 0, 131081, 65536, 3, 131080, 262144, 0, 458768, 393216, 0, 458769, 65536, 0, 458770, 65536, 0, 65554, 1, 0, 18, 1, 0, 65553, 1, 0, 17, 1, 0, 65552, 1, 0, 16, 1, 0, 65551, 1, 0, 15, 1, 0, 65550, 1, 0, 14, 1, 0, 65549, 1, 0, 13, 1, 0, 65548, 1, 0, 12, 1, 0, 65547, 1, 0, 11, 1, 0, 65546, 1, 0, 10, 1, 0, 65545, 1, 0, 9, 1, 0, 65544, 1, 0, 8, 1, 0, 65543, 1, 0, 7, 1, 0, 65542, 1, 0, 6, 1, 0, 65541, 1, 0, 5, 1, 0, 65540, 1, 0, 4, 1, 0, 65539, 1, 0, 3, 1, 0, 65538, 1, 0, 2, 1, 0, 65537, 1, 0, 1, 1, 0, 65536, 1, 0, 0, 1, 0, 393234, 1, 0, 327698, 1, 0, 262162, 1, 0, 196626, 1, 0, 131090, 1, 0, 393233, 1, 0, 327697, 1, 0, 262161, 1, 0, 196625, 1, 0, 131089, 1, 0, 393232, 1, 0, 327696, 1, 0, 262160, 1, 0, 196624, 1, 0, 131088, 1, 0, 393231, 1, 0, 327695, 1, 0, 262159, 1, 0, 196623, 1, 0, 131087, 1, 0, 393230, 1, 0, 327694, 1, 0, 262158, 1, 0, 196622, 1, 0, 131086, 1, 0, 393229, 1, 0, 327693, 1, 0, 262157, 1, 0, 196621, 1, 0, 131085, 1, 0, 393228, 1, 0, 327692, 1, 0, 262156, 1, 0, 196620, 1, 0, 131084, 1, 0, 393227, 1, 0, 327691, 1, 0, 262155, 1, 0, 196619, 1, 0, 131083, 1, 0, 393226, 196608, 0, 327690, 1, 0, 262154, 196608, 2, 196618, 196608, 1, 393225, 1, 0, 327689, 1, 0, 262153, 1, 0, 196617, 1, 0, 393224, 196608, 0, 327688, 1, 0, 262152, 196608, 2, 196616, 196608, 1, 393223, 1, 0, 327687, 1, 0, 262151, 1, 0, 196615, 1, 0, 131079, 1, 0, 393222, 1, 0, 327686, 1, 0, 262150, 1, 0, 196614, 1, 0, 131078, 1, 0, 393221, 1, 0, 327685, 1, 0, 262149, 1, 0, 196613, 1, 0, 131077, 1, 0, 393220, 1, 0, 327684, 1, 0, 262148, 1, 0, 196612, 1, 0, 131076, 1, 0, 393219, 1, 0, 327683, 1, 0, 262147, 1, 0, 196611, 1, 0, 131075, 1, 0, 393218, 1, 0, 327682, 1, 0, 262146, 1, 0, 196610, 1, 0, 131074, 1, 0, 393217, 1, 0, 327681, 1, 0, 262145, 1, 0, 196609, 1, 0, 131073, 1, 0, 393216, 1, 0, 327680, 1, 0, 262144, 1, 0, 196608, 1, 0, 131072, 1, 0, 458767, 0, 3, 458766, 1, 0, 458765, 1, 0, 458764, 1, 0, 458763, 1, 0, 458762, 196608, 1, 458761, 1, 0, 458760, 196608, 1, 458759, 1, 0, 458758, 1, 0, 458757, 1, 0, 458756, 1, 0, 458755, 131072, 3, 720914, 65536, 1, 655378, 65536, 1, 589842, 65536, 1, 524306, 65536, 1, 720913, 65536, 1, 655377, 65536, 1, 589841, 65536, 1, 524305, 65536, 1, 720912, 0, 1, 655376, 0, 1, 589840, 0, 1, 524304, 0, 1, 720911, 1, 0, 655375, 1, 0, 589839, 1, 0, 524303, 1, 0, 720910, 1, 0, 655374, 1, 0, 589838, 1, 0, 524302, 1, 0, 720909, 1, 0, 655373, 1, 0, 589837, 1, 0, 524301, 1, 0, 720908, 1, 0, 655372, 1, 0, 589836, 1, 0, 524300, 1, 0, 720907, 1, 0, 655371, 1, 0, 589835, 1, 0, 524299, 1, 0, 720906, 1, 0, 655370, 1, 0, 589834, 1, 0, 524298, 458752, 3, 720905, 1, 0, 655369, 1, 0, 589833, 1, 0, 524297, 65536, 3, 720904, 1, 0, 655368, 1, 0, 589832, 1, 0, 524296, 262144, 3, 720903, 1, 0, 655367, 1, 0, 589831, 1, 0, 524295, 1, 0, 720902, 1, 0, 655366, 1, 0, 589830, 1, 0, 524294, 1, 0, 720901, 1, 0, 655365, 1, 0, 589829, 1, 0, 524293, 1, 0, 720900, 1, 0, 655364, 1, 0, 589828, 1, 0, 524292, 1, 0, 720899, 1, 0, 655363, 1, 0, 589827, 1, 0, 524291, 1, 0, 720898, 131072, 1, 655362, 131072, 1, 589826, 131072, 1, 524290, 131072, 1, 720897, 65536, 1, 655361, 65536, 1, 589825, 65536, 1, 524289, 65536, 1, 720896, 65536, 1, 655360, 65536, 1, 589824, 65536, 1, 524288, 65536, 1)
+
+[node name="StandardTurret" parent="Enemies" index="0" instance=ExtResource("2_v2c40")]
+material = SubResource("ShaderMaterial_mpav8")
+position = Vector2(240, 144)
+
+[node name="Base" parent="Enemies/StandardTurret" index="2"]
+rotation = -1.5708
+
+[node name="StandardTurret2" parent="Enemies" index="1" instance=ExtResource("2_v2c40")]
+material = SubResource("ShaderMaterial_8k5ar")
+position = Vector2(368, 144)
+
+[node name="Base" parent="Enemies/StandardTurret2" index="2"]
+rotation = 1.5708
+
+[node name="FlyingEnemy2" parent="Enemies" index="2" instance=ExtResource("3_iq3en")]
+material = SubResource("ShaderMaterial_mevsb")
+position = Vector2(304, 208)
+
+[node name="FlyingEnemy3" parent="Enemies" index="3" instance=ExtResource("3_iq3en")]
+material = SubResource("ShaderMaterial_3udwq")
+position = Vector2(304, 240)
+
+[node name="FlyingEnemy4" parent="Enemies" index="4" instance=ExtResource("3_iq3en")]
+material = SubResource("ShaderMaterial_ig0u8")
+position = Vector2(304, 112)
+
+[node name="FlyingEnemy5" parent="Enemies" index="5" instance=ExtResource("3_iq3en")]
+material = SubResource("ShaderMaterial_tn0y0")
+position = Vector2(304, 144)
+
+[editable path="Enemies/StandardTurret"]
+[editable path="Enemies/StandardTurret2"]

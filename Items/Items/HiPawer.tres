@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Items" load_steps=3 format=3 uid="uid://bx678hcahcctk"]
+
+[ext_resource type="Texture2D" uid="uid://ddlsfp5l7apii" path="res://Assets/Assets/Items/Hi-Pawer.png" id="1_3srwv"]
+[ext_resource type="Script" path="res://Items/Items.gd" id="1_fo4rh"]
+
+[resource]
+script = ExtResource("1_fo4rh")
+Name = "Hi-Pawer"
+Description = "A popular energy drink amongst homo-sapiens. Caffeine doesn't work the same for you, but sugar does. Increases speed."
+Cost = 50
+Sprite = ExtResource("1_3srwv")
+Health = 0
+DamageHealed = 0
+Speed = 0.0
+Attack = 0.0
+FireRate = 1.0
+FallSpeed = 1.0
+Acceleration = 1.0
+JumpVelocity = 1.0
+ProjectileSpeed = 1.0

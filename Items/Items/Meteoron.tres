@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Items" load_steps=3 format=3 uid="uid://dqufsymrfi7y8"]
+
+[ext_resource type="Script" path="res://Items/Items.gd" id="1_1d7qv"]
+[ext_resource type="Texture2D" uid="uid://c04lfl4ahxb2l" path="res://Assets/Assets/Items/Meteoron.png" id="1_oxe44"]
+
+[resource]
+script = ExtResource("1_1d7qv")
+Name = "Meteoron"
+Description = "Ancient homo-sapiens believed these meteors could grant one's wish. Movement speed greatly increases."
+Cost = 50
+Sprite = ExtResource("1_oxe44")
+Health = 0
+DamageHealed = 0
+Speed = 2.0
+Attack = 0.0
+FireRate = 0.0
+FallSpeed = 1.0
+Acceleration = 2.0
+JumpVelocity = 1.0
+ProjectileSpeed = 1.0

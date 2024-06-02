@@ -1,0 +1,105 @@
+[gd_scene load_steps=11 format=3 uid="uid://c02lwf4r157t"]
+
+[ext_resource type="Script" path="res://UI/Shop/Shop.gd" id="1_dm04n"]
+[ext_resource type="PackedScene" uid="uid://g6k0sppp68kd" path="res://UI/ItemButton.tscn" id="1_uciib"]
+[ext_resource type="FontFile" uid="uid://c58k3bttakj0o" path="res://UI/Fonts/Pixellari.ttf" id="2_n7wpn"]
+[ext_resource type="PackedScene" uid="uid://c47sr7qr7j7hk" path="res://Music/SoundPlayer.tscn" id="4_0h3i5"]
+[ext_resource type="Texture2D" uid="uid://cc6kktgbotcyt" path="res://Assets/Assets/UI/Restock.png" id="4_o42kx"]
+[ext_resource type="Texture2D" uid="uid://drjih25fwjrjl" path="res://Assets/Assets/UI/Rest.png" id="5_d76hy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ah0rm"]
+bg_color = Color(0, 0.392157, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 1, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6w6ct"]
+bg_color = Color(0, 0.705882, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 1, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pw3fe"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 1, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_tybo3"]
+Button/colors/font_color = Color(1, 1, 1, 0.588235)
+Button/font_sizes/font_size = 64
+Button/fonts/font = ExtResource("2_n7wpn")
+Button/styles/hover = SubResource("StyleBoxFlat_ah0rm")
+Button/styles/normal = SubResource("StyleBoxFlat_6w6ct")
+Button/styles/pressed = SubResource("StyleBoxFlat_pw3fe")
+
+[node name="GridContainer" type="GridContainer"]
+offset_right = 656.0
+offset_bottom = 424.0
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 40
+columns = 2
+script = ExtResource("1_dm04n")
+
+[node name="Button" parent="." instance=ExtResource("1_uciib")]
+layout_mode = 2
+
+[node name="Button2" parent="." instance=ExtResource("1_uciib")]
+layout_mode = 2
+
+[node name="Button3" parent="." instance=ExtResource("1_uciib")]
+layout_mode = 2
+
+[node name="Button4" parent="." instance=ExtResource("1_uciib")]
+layout_mode = 2
+
+[node name="Button5" parent="." instance=ExtResource("1_uciib")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Restock" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(166, 0)
+layout_mode = 2
+focus_mode = 0
+theme = SubResource("Theme_tybo3")
+text = "$10"
+icon = ExtResource("4_o42kx")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Heal" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(166, 0)
+layout_mode = 2
+focus_mode = 0
+theme = SubResource("Theme_tybo3")
+text = "$50
+"
+icon = ExtResource("5_d76hy")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SoundPlayer" parent="HBoxContainer" instance=ExtResource("4_0h3i5")]
+
+[connection signal="button_down" from="HBoxContainer/Restock" to="." method="_on_restock_button_down"]
+[connection signal="button_down" from="HBoxContainer/Heal" to="." method="_on_heal_button_down"]

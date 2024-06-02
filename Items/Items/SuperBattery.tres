@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Items" load_steps=3 format=3 uid="uid://blueaafpd0riw"]
+
+[ext_resource type="Texture2D" uid="uid://d8x7ybx4cej6" path="res://Assets/Assets/Items/Battery.png" id="1_lgbyu"]
+[ext_resource type="Script" path="res://Items/Items.gd" id="2_60340"]
+
+[resource]
+script = ExtResource("2_60340")
+Name = "Super Battery"
+Description = "Powered by a fragment of a dwarf star. Super charges your weapon. Increases projectile speed and fire-rate"
+Cost = 50
+Sprite = ExtResource("1_lgbyu")
+Health = 0
+DamageHealed = 0
+Speed = 1.0
+Attack = 0.0
+FireRate = 1.0
+FallSpeed = 0.0
+Acceleration = 1.0
+JumpVelocity = 0.0
+ProjectileSpeed = 1.0

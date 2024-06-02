@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Items" load_steps=3 format=3 uid="uid://dw4gcvn8iwoap"]
+
+[ext_resource type="Script" path="res://Items/Items.gd" id="1_b5oyd"]
+[ext_resource type="Texture2D" uid="uid://ctvn4kqwro1ne" path="res://Assets/Assets/Items/MasterSword.png" id="1_fevgt"]
+
+[resource]
+script = ExtResource("1_b5oyd")
+Name = "Master Sword"
+Description = "Used by a legendary swordsman. Said to be crafted by the gods to seal evil. Increase attack greatly."
+Cost = 50
+Sprite = ExtResource("1_fevgt")
+Health = 0
+DamageHealed = 0
+Speed = 0.0
+Attack = 2.0
+FireRate = 0.0
+FallSpeed = 0.0
+Acceleration = 0.0
+JumpVelocity = 0.0
+ProjectileSpeed = 0.0

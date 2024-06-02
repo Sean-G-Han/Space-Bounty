@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://s7jiwl1ambgq"]
+
+[ext_resource type="Script" path="res://Stats.gd" id="1_1dxwc"]
+
+[resource]
+script = ExtResource("1_1dxwc")
+Health = 10.0
+Speed = 120
+Attack = 1.0
+FireRate = 2.0
+FallSpeed = 300.0
+Acceleration = 15.0
+JumpVelocity = -300.0
+ProjectileSpeed = 425

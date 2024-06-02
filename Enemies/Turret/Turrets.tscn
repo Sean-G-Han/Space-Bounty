@@ -1,0 +1,94 @@
+[gd_scene load_steps=13 format=3 uid="uid://iyp3siowcvsb"]
+
+[ext_resource type="Script" path="res://Enemies/Turret/Turrets.gd" id="1_wp1ik"]
+[ext_resource type="Resource" uid="uid://bi06k3hbfmsca" path="res://Enemies/Turret/StandardTurret/Turrets.tres" id="2_k7w4v"]
+[ext_resource type="Texture2D" uid="uid://td28qj8dmm7a" path="res://Assets/Assets/Enemy/Turret(canon).png" id="3_bby85"]
+[ext_resource type="Texture2D" uid="uid://cy3ixqlnxvxt7" path="res://Assets/Assets/Enemy/Turret(barrel).png" id="4_vkc8w"]
+[ext_resource type="Script" path="res://Hitbox & Hurtbox/Hurtbox.gd" id="4_xbfm7"]
+[ext_resource type="Texture2D" uid="uid://b4dxdh67d31w2" path="res://Assets/Assets/Enemy/Turret(base).png" id="5_1t0q6"]
+[ext_resource type="AudioStream" uid="uid://c74rjiaiphi1u" path="res://Assets/Sound/SFX/EnemyGunShot.wav" id="7_fejhk"]
+[ext_resource type="PackedScene" uid="uid://c47sr7qr7j7hk" path="res://Music/SoundPlayer.tscn" id="8_q2w4e"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bmbg6"]
+polygon = PackedVector2Array(15, -2, 15, 2, 1, 2, 1, -2)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2esyv"]
+polygon = PackedVector2Array(-12, -2, -11, -4, -6, -4, -5, -5, 6, -5, 7, -4, 7, 4, 6, 5, -5, 5, -6, 4, -11, 4, -12, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1pyw"]
+size = Vector2(12, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrjad"]
+size = Vector2(16, 16)
+
+[node name="Turret" type="CharacterBody2D"]
+light_mask = 2
+collision_layer = 4
+collision_mask = 5
+motion_mode = 1
+script = ExtResource("1_wp1ik")
+bounty = 4
+stats = ExtResource("2_k7w4v")
+
+[node name="Cannon" type="Sprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+use_parent_material = true
+texture = ExtResource("3_bby85")
+
+[node name="Barrel" type="Sprite2D" parent="Cannon"]
+light_mask = 2
+visibility_layer = 2
+z_index = -1
+use_parent_material = true
+position = Vector2(5, 0)
+texture = ExtResource("4_vkc8w")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Cannon/Barrel"]
+visible = false
+occluder = SubResource("OccluderPolygon2D_bmbg6")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Cannon"]
+visible = false
+occluder = SubResource("OccluderPolygon2D_2esyv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_v1pyw")
+disabled = true
+
+[node name="Base" type="Sprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+use_parent_material = true
+texture = ExtResource("5_1t0q6")
+
+[node name="RayCast" type="RayCast2D" parent="."]
+
+[node name="AimLine" type="Line2D" parent="."]
+light_mask = 2
+z_index = -2
+width = 1.5
+default_color = Color(1, 0, 0, 0)
+
+[node name="Hurtbox" type="Area2D" parent="."]
+monitoring = false
+script = ExtResource("4_xbfm7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+visible = false
+shape = SubResource("RectangleShape2D_yrjad")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="FireRateTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="GunShot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_fejhk")
+bus = &"Enemy"
+
+[node name="SoundPlayer" parent="." instance=ExtResource("8_q2w4e")]
+
+[connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="_on_area_entered"]
+[connection signal="timeout" from="FireRateTimer" to="." method="_on_fire_rate_timer_timeout"]

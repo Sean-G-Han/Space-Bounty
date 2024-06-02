@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://dm4i7gvs8e6vx"]
+
+[ext_resource type="Script" path="res://Enemies/Land/LandedEnemy.gd" id="1_68ii2"]
+[ext_resource type="Resource" uid="uid://gr0poh58lolv" path="res://Enemies/Land/Turtle/Turtle.tres" id="2_6p7us"]
+[ext_resource type="PackedScene" uid="uid://c47sr7qr7j7hk" path="res://Music/SoundPlayer.tscn" id="3_k53eh"]
+[ext_resource type="PackedScene" uid="uid://c3lkappyeeje1" path="res://Hitbox & Hurtbox/Hitbox.tscn" id="4_0ot2m"]
+[ext_resource type="PackedScene" uid="uid://cw0hrlc6fjn4h" path="res://Hitbox & Hurtbox/Hurtbox.tscn" id="5_rjx3m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdb7o"]
+size = Vector2(23, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntntb"]
+size = Vector2(28, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cs1mf"]
+size = Vector2(28, 20)
+
+[node name="LandedEnemy" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_68ii2")
+stats = ExtResource("2_6p7us")
+
+[node name="SoundPlayer" parent="." instance=ExtResource("3_k53eh")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_cdb7o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+hframes = 6
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="NavTimer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="Hitbox" parent="." instance=ExtResource("4_0ot2m")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+visible = false
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_ntntb")
+
+[node name="Hurtbox" parent="." instance=ExtResource("5_rjx3m")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+visible = false
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_cs1mf")
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="Detectors" type="Node2D" parent="."]
+
+[node name="WallDetector" type="RayCast2D" parent="Detectors"]
+target_position = Vector2(-20, 0)
+collision_mask = 5
+
+[node name="LedgeDetector" type="RayCast2D" parent="Detectors"]
+position = Vector2(-13, 12)
+target_position = Vector2(0, 6)

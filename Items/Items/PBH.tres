@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Items" load_steps=3 format=3 uid="uid://c7n31jjntcn8i"]
+
+[ext_resource type="Texture2D" uid="uid://bg1q1dyvpyubb" path="res://Assets/Assets/Items/PBH.png" id="1_2vi5e"]
+[ext_resource type="Script" path="res://Items/Items.gd" id="2_cf61u"]
+
+[resource]
+script = ExtResource("2_cf61u")
+Name = "Black Hole Ingot"
+Description = "Taken from a black-hole. When smelted with one's bullet, massively increase damage at the cost of projectile rate and speed."
+Cost = 50
+Sprite = ExtResource("1_2vi5e")
+Health = 0
+DamageHealed = 0
+Speed = -1.0
+Attack = 5.0
+FireRate = -2.0
+FallSpeed = 0.0
+Acceleration = 0.0
+JumpVelocity = 0.0
+ProjectileSpeed = -2.0

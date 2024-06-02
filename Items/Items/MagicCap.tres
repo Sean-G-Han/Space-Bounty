@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Items" load_steps=3 format=3 uid="uid://fnyx8sjo5mvi"]
+
+[ext_resource type="Texture2D" uid="uid://d336yqm455hlx" path="res://Assets/Assets/Items/MagicCap.png" id="1_5w2q1"]
+[ext_resource type="Script" path="res://Items/Items.gd" id="1_iwlsp"]
+
+[resource]
+script = ExtResource("1_iwlsp")
+Name = "Magic Shroom"
+Description = "A psychedelic mushroom that warps perception. Makes you feel invincible. All stats up including health."
+Cost = 50
+Sprite = ExtResource("1_5w2q1")
+Health = 1
+DamageHealed = 0
+Speed = 0.0
+Attack = 1.0
+FireRate = 1.0
+FallSpeed = 0.0
+Acceleration = 0.0
+JumpVelocity = 0.0
+ProjectileSpeed = 1.0

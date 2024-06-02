@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dueoq2b4s1r7d"]
+
+[ext_resource type="PackedScene" uid="uid://ghtr4wtcnkec" path="res://UI/Stats Display/IconDisplay.tscn" id="1_0bour"]
+[ext_resource type="Script" path="res://UI/Stats Display/Coin.gd" id="2_pg2g7"]
+
+[node name="Coin" instance=ExtResource("1_0bour")]
+script = ExtResource("2_pg2g7")

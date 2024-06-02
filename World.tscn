@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://cs53upku3sj63"]
+
+[ext_resource type="Script" path="res://World.gd" id="1_r8ryb"]
+[ext_resource type="PackedScene" uid="uid://cng8oy0n7aefm" path="res://Rooms/StartingRoom.tscn" id="2_pnvax"]
+[ext_resource type="PackedScene" uid="uid://bcfpq25l0b5ni" path="res://Player/Player.tscn" id="3_k40a8"]
+[ext_resource type="PackedScene" uid="uid://b6gif3mgd8us0" path="res://UI/UI.tscn" id="4_orimm"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_r8ryb")
+
+[node name="Room_Base" parent="." instance=ExtResource("2_pnvax")]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_k40a8")]
+position = Vector2(286, 210)
+
+[node name="UI" parent="." instance=ExtResource("4_orimm")]

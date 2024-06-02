@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cuy833aedth4d"]
+
+[ext_resource type="Script" path="res://Hazards/MovingPlatform.gd" id="1_3715k"]
+[ext_resource type="Texture2D" uid="uid://cpnxui5npmc46" path="res://Assets/Assets/MovingPlatform.png" id="2_siyef"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ttr6c"]
+light_mode = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iu8oq"]
+size = Vector2(32, 32)
+
+[node name="MovingPlatform" type="AnimatableBody2D"]
+material = SubResource("CanvasItemMaterial_ttr6c")
+script = ExtResource("1_3715k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_siyef")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_iu8oq")
+one_way_collision = true
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
+radius = 16.0

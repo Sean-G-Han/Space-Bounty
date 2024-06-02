@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://6ibigkgpyp7h"
+path="res://.godot/imported/Ludum Dare 30 - Track 9.wav-8d397322062625b8f5848a1b734c4049.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/Ludum Dare 30 - Track 9.wav"
+dest_files=["res://.godot/imported/Ludum Dare 30 - Track 9.wav-8d397322062625b8f5848a1b734c4049.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

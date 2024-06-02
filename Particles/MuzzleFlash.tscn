@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=3 uid="uid://dviqiijuiowyw"]
+
+[sub_resource type="Gradient" id="Gradient_dkle1"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3kdoc"]
+gradient = SubResource("Gradient_dkle1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3nwjm"]
+particle_flag_disable_z = true
+spread = 20.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 300.0
+initial_velocity_max = 400.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+damping_min = 1.0
+damping_max = 5.0
+scale_min = 3.0
+scale_max = 3.0
+color_ramp = SubResource("GradientTexture1D_3kdoc")
+
+[sub_resource type="Animation" id="Animation_bhqdy"]
+resource_name = "AutoFree"
+step = 1.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_0fhjs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u6p7x"]
+_data = {
+"AutoFree": SubResource("Animation_bhqdy"),
+"RESET": SubResource("Animation_0fhjs")
+}
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_3nwjm")
+lifetime = 0.1
+one_shot = true
+explosiveness = 1.0
+randomness = 0.32
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "AutoFree"
+libraries = {
+"": SubResource("AnimationLibrary_u6p7x")
+}

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://u6kib0ttlggt"]
+
+[ext_resource type="AudioStream" uid="uid://6ibigkgpyp7h" path="res://Assets/Sound/Ludum Dare 30 - Track 9.wav" id="1_py6o1"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+process_mode = 3
+stream = ExtResource("1_py6o1")
+volume_db = -10.0
+mix_target = 1

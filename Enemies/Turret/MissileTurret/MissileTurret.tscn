@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bp6pmqlav0i56"]
+
+[ext_resource type="PackedScene" uid="uid://iyp3siowcvsb" path="res://Enemies/Turret/Turrets.tscn" id="1_gyqi8"]
+[ext_resource type="Texture2D" uid="uid://c3jx8bpag6uan" path="res://Assets/Assets/Enemy/MissileTurret(canon).png" id="2_kephl"]
+[ext_resource type="Texture2D" uid="uid://bnbyegwt6vt0j" path="res://Assets/Assets/Enemy/MissileTurret(barrel).png" id="3_n86fr"]
+
+[node name="Turret" instance=ExtResource("1_gyqi8")]
+
+[node name="Cannon" parent="." index="0"]
+texture = ExtResource("2_kephl")
+
+[node name="Barrel" parent="Cannon" index="0"]
+texture = ExtResource("3_n86fr")
+
+[node name="LightOccluder2D" parent="Cannon/Barrel" index="0"]
+visible = true
+
+[node name="LightOccluder2D" parent="Cannon" index="1"]
+visible = true
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = true
